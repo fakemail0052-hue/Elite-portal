@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elite Admin Panel</title>
+    <style>
+        body { background: #0b0d17; color: #d4af37; font-family: 'Arial', sans-serif; text-align: center; padding: 50px; }
+        .card { border: 2px solid #d4af37; padding: 20px; display: inline-block; border-radius: 15px; background: #1a1c23; }
+        input { padding: 10px; margin: 10px; width: 80%; border-radius: 5px; border: 1px solid #d4af37; background: #000; color: #fff; }
+        button { background: #d4af37; color: #000; padding: 10px 20px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Billionaire Control</h1>
+        <p>Update Service Prices</p>
+        <input type="text" id="price" placeholder="New Price (e.g. $100k)">
+        <br>
+        <button onclick="updatePrice()">SAVE CHANGES</button>
+    </div>
+    <script>
+        function updatePrice() {
+            alert("Changes saved! Portal is updating...");
+        }
+    </script>
+</body>
+</html>
