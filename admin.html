@@ -1,26 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Admin Panel</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
     <style>
-        body { background: #0b0d17; color: #d4af37; font-family: 'Arial', sans-serif; text-align: center; padding: 50px; }
-        .card { border: 2px solid #d4af37; padding: 20px; display: inline-block; border-radius: 15px; background: #1a1c23; }
-        input { padding: 10px; margin: 10px; width: 80%; border-radius: 5px; border: 1px solid #d4af37; background: #000; color: #fff; }
-        button { background: #d4af37; color: #000; padding: 10px 20px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        body { background: #0b0d17; color: #d4af37; font-family: Arial; text-align: center; padding: 50px; }
+        .card { border: 2px solid #d4af37; padding: 20px; border-radius: 15px; background: #1a1c23; display: inline-block; }
+        input { padding: 12px; margin: 10px; width: 80%; border-radius: 5px; border: 1px solid #d4af37; background: #000; color: #fff; }
+        button { background: #d4af37; color: #000; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; width: 80%; }
+        #adminContent { display: none; }
     </style>
 </head>
 <body>
-    <div class="card">
+    <div id="loginBox" class="card">
+        <h1>Admin Login</h1>
+        <input type="password" id="passInput" placeholder="Enter Password">
+        <button onclick="checkPass()">LOGIN</button>
+    </div>
+    <div id="adminContent" class="card">
         <h1>Billionaire Control</h1>
-        <p>Update Service Prices</p>
-        <input type="text" id="price" placeholder="New Price (e.g. $100k)">
-        <br>
-        <button onclick="updatePrice()">SAVE CHANGES</button>
+        <input type="text" id="price" placeholder="New Price">
+        <button onclick="alert('Updating...')">SAVE CHANGES</button>
     </div>
     <script>
-        function updatePrice() {
-            alert("Changes saved! Portal is updating...");
+        function checkPass() {
+            let p = document.getElementById('passInput').value;
+            if(p === "Billionaire005") {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('adminContent').style.display = 'block';
+            } else { alert("Ghalat Password!"); }
         }
     </script>
 </body>
